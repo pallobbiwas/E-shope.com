@@ -1,7 +1,8 @@
-import React from "react";
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
+import React, { useEffect, useState } from "react";
+import { A11y, Navigation, Pagination } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import "../../styel/header.css";
 
 // Import Swiper styles
 import "swiper/css";
@@ -10,11 +11,18 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 const SubBanner = () => {
+  const [adds, setAdd] = useState([]);
+  useEffect(() => {
+    fetch("addData.json")
+      .then((res) => res.json())
+      .then((data) => setAdd(data));
+  }, []);
+
   return (
-    <div className="container-fluid mt-10">
+    <div className="container mx-auto mt-10">
       <Swiper
         // install Swiper modules
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination, A11y]}
         spaceBetween={50}
         slidesPerView={3}
         navigation
@@ -23,87 +31,22 @@ const SubBanner = () => {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
-        <SwiperSlide>
-          <img
-            src="https://img.olympicchannel.com/images/image/private/t_social_share_thumb/f_auto/primary/qjxgsf7pqdmyqzsptxju"
-            alt=""
-          />
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Doloremque, sit?
-          </p>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.olympicchannel.com/images/image/private/t_social_share_thumb/f_auto/primary/qjxgsf7pqdmyqzsptxju"
-            alt=""
-          />
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Doloremque, sit?
-          </p>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.olympicchannel.com/images/image/private/t_social_share_thumb/f_auto/primary/qjxgsf7pqdmyqzsptxju"
-            alt=""
-          />
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Doloremque, sit?
-          </p>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.olympicchannel.com/images/image/private/t_social_share_thumb/f_auto/primary/qjxgsf7pqdmyqzsptxju"
-            alt=""
-          />
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Doloremque, sit?
-          </p>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.olympicchannel.com/images/image/private/t_social_share_thumb/f_auto/primary/qjxgsf7pqdmyqzsptxju"
-            alt=""
-          />
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Doloremque, sit?
-          </p>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.olympicchannel.com/images/image/private/t_social_share_thumb/f_auto/primary/qjxgsf7pqdmyqzsptxju"
-            alt=""
-          />
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Doloremque, sit?
-          </p>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.olympicchannel.com/images/image/private/t_social_share_thumb/f_auto/primary/qjxgsf7pqdmyqzsptxju"
-            alt=""
-          />
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Doloremque, sit?
-          </p>
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://img.olympicchannel.com/images/image/private/t_social_share_thumb/f_auto/primary/qjxgsf7pqdmyqzsptxju"
-            alt=""
-          />
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Doloremque, sit?
-          </p>
-        </SwiperSlide>
-        ...
+        {adds.map((a) => {
+          return (
+            <SwiperSlide>
+              <div className="mt-10 mb-14 flex borderd">
+                <div className="h-56">
+                  <img className="h-full" src={a.img} alt="" />
+                </div>
+                <div className="bg-yellow-400 w-60 p-3">
+                  <h1>Name: {a.name}</h1>
+                  <h1 className="mt-2 mb-4">price: {a.price}</h1>
+                  <button className="btn btn-sm bg-blue-500">Buy now</button>
+                </div>
+              </div>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );

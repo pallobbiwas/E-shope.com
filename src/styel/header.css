@@ -9,3 +9,6 @@ li:hover {
   transition: 1s;
 }
 /* sub banner */
+.borderd {
+  border: 3px solid yellow;
+}
