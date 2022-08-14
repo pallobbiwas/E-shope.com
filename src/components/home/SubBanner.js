@@ -31,10 +31,10 @@ const SubBanner = () => {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
-        {adds.map((a) => {
+        {adds.map((a, index) => {
           return (
-            <SwiperSlide>
-              <div className="mt-10 mb-14 flex borderd">
+            <SwiperSlide key={index}>
+              <div className="mt-10 mb-14 grid grid-cols-1 md:grid-cols-2 borderd">
                 <div className="h-56">
                   <img className="h-full" src={a.img} alt="" />
                 </div>
