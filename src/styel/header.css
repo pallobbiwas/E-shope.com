@@ -1,12 +1,18 @@
 .box-size {
   background-color: rgb(1, 93, 121);
 }
-li:hover {
+li a:hover {
   color: rgb(189, 141, 235);
   background-color: rgb(61, 56, 51);
-  border-bottom-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-radius: 5px;
   transition: 1s;
+}
+.hr {
+  border: 1px solid wheat;
+  margin: 5px 0;
+}
+.border-bottom {
+  border-bottom: 2px solid snow;
 }
 /* sub banner */
 .borderd {

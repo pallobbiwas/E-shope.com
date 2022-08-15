@@ -34,7 +34,7 @@ const Products = () => {
       <div className="container mx-auto mt-20">
         <div className="mb-20">
           <h1 className="mb-5 text-6xl font-bold ">
-            Your best choice t-shirt is here
+            <span className="text-yellow-400">Your best choice</span> <span className="text-green-600">t-shirt is here</span>
           </h1>
           <hr />
         </div>
