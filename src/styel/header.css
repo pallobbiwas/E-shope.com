@@ -12,3 +12,38 @@ li:hover {
 .borderd {
   border: 3px solid yellow;
 }
+/* products */
+
+.products_title {
+  background-color: rgb(1, 93, 121);
+  color: antiquewhite;
+}
+hr {
+  border: 2px solid blue;
+}
+.main-box {
+  position: relative;
+}
+.main-box:hover {
+  cursor: pointer;
+}
+.intro {
+  box-sizing: border-box;
+  height: 0px;
+  background-color: rgba(0, 0, 0, 0.781);
+  color: whitesmoke;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 3px;
+}
+.main-box:hover .intro {
+  height: 100%;
+  transition: 3s;
+}
+.box {
+  height: 362px;
+}
+.img-box {
+  max-height: 250px;
+  padding: 5px;
+}

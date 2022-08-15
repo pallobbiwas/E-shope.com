@@ -38,9 +38,10 @@ const SubBanner = () => {
                 <div className="h-56">
                   <img className="h-full" src={a.img} alt="" />
                 </div>
-                <div className="bg-yellow-400 w-60 p-3">
+                <div className="bg-yellow-400 w-60 p-3 text-left md:text-center">
                   <h1>Name: {a.name}</h1>
                   <h1 className="mt-2 mb-4">price: {a.price}</h1>
+                  <p className="text-red-600 text-2xl font-semibold mb-4">{a.discount} Discount</p>
                   <button className="btn btn-sm bg-blue-500">Buy now</button>
                 </div>
               </div>
