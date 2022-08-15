@@ -35,6 +35,7 @@ hr {
   position: absolute;
   bottom: 0px;
   border-radius: 3px;
+  overflow: hidden;
 }
 .main-box:hover .intro {
   height: 100%;

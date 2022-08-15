@@ -54,9 +54,11 @@ const Products = () => {
                     </div>
                     <div className="intro text-center w-full">
                       <div className="pt-24">
-                        <p className="mb-3">{p.name}</p>
+                        <p className="mb-3 text-2xl font-bold text-yellow-400">{p.name}</p>
                         <button className="mr-3 btn btn-sm">Add to card</button>
-                        <button className="mr-3 btn btn-sm bg-slate-700">Details more</button>
+                        <button className="mr-3 btn btn-sm bg-slate-700">
+                          Details more
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -76,9 +78,11 @@ const Products = () => {
                     </div>
                     <div className="intro text-center w-full">
                       <div className="pt-24">
-                        <p className="mb-3">{p.name}</p>
-                        <button className="mr-3">Add to card</button>
-                        <button>Details more</button>
+                        <p className="mb-3 text-2xl font-bold text-yellow-400">{p.name}</p>
+                        <button className="mr-3 btn btn-sm">Add to card</button>
+                        <button className="mr-3 btn btn-sm bg-slate-700">
+                          Details more
+                        </button>
                       </div>
                     </div>
                   </div>
