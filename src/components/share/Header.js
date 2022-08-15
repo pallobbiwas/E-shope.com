@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import "../../styel/header.css";
 
 const Header = ({ children }) => {
+  const order = 2;
   return (
     <div className="">
       <div className="drawer ">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col fixed  top-0 w-full">
-          <div className="w-full flex py-4 md:block box-size border-bottom">
+        <div className="drawer-content flex flex-col w-full">
+          <div className="w-full flex py-4 md:block box-size border-bottom fixed  top-0 z-50">
             <div className="flex-1 px-2 mx-2 text-white mb-4 md:px-32">
               <p className="text-left md:text-center">
                 <span className="text-4xl font-bold text-yellow-500">
@@ -83,7 +84,7 @@ const Header = ({ children }) => {
                   <li className="bg-blue-600 rounded-md text-white font-bold mr-2">
                     <div class="indicator">
                       <span class="indicator-item badge badge-secondary">
-                        1
+                        {order}
                       </span>
                       <div class="grid place-items-center">
                         <svg

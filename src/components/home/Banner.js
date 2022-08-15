@@ -2,7 +2,7 @@ import React from "react";
 
 const banner = () => {
   return (
-    <div>
+    <div className="mt-20 md:mt-32">
       <div
         className="hero h-96"
         style={{
