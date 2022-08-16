@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { CreateContext } from "../../pages/Home";
 import "../../styel/header.css";
 import Adds from "./Adds";
 
 const Products = () => {
   const [isOrder, setIsOrder] = useContext(CreateContext);
+  const navigate = useNavigate();
 
   const [product, setProduct] = useState([]);
   const [isMore, setIsMore] = useState(true);
@@ -18,6 +20,10 @@ const Products = () => {
   const incriceOne = () => {
     setIsOrder(isOrder + 1);
   };
+
+  const detailsPage = (id) => {
+    navigate(`/productdetails/${id}`);
+  }
 
   return (
     <div>
@@ -57,7 +63,10 @@ const Products = () => {
                         >
                           Add to card
                         </button>
-                        <button className="mr-3 btn btn-sm bg-slate-700">
+                        <button
+                          onClick={()=>detailsPage(p.id)}
+                          className="mr-3 btn btn-sm bg-slate-700"
+                        >
                           Details more
                         </button>
                       </div>
