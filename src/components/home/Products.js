@@ -1,10 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import img from "../../imge/img.png";
+import { CreateContext } from "../../pages/Home";
 import "../../styel/header.css";
 
 const Products = () => {
+
+  const [isOrder, setIsOrder] = useContext(CreateContext);
+
+
   const [product, setProduct] = useState([]);
   const [isMore, setIsMore] = useState(true);
+
 
   useEffect(() => {
     fetch("product.json")
@@ -12,7 +18,11 @@ const Products = () => {
       .then((data) => setProduct(data));
   }, []);
 
-  console.log(isMore);
+
+  const incriceOne = () => {
+
+    setIsOrder(isOrder + 1);
+  }
 
   return (
     <div>
@@ -55,7 +65,7 @@ const Products = () => {
                     <div className="intro text-center w-full">
                       <div className="pt-24">
                         <p className="mb-3 text-2xl font-bold text-yellow-400">{p.name}</p>
-                        <button className="mr-3 btn btn-sm">Add to card</button>
+                        <button onClick={incriceOne} className="mr-3 btn btn-sm">Add to card</button>
                         <button className="mr-3 btn btn-sm bg-slate-700">
                           Details more
                         </button>

@@ -45,7 +45,8 @@ hr {
 }
 .main-box:hover .intro {
   height: 100%;
-  transition: 3s;
+  transition: 2s;
+  cursor: initial;
 }
 .box {
   height: 362px;

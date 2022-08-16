@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CreateContext } from "../../pages/Home";
 import "../../styel/header.css";
 
 const Header = ({ children }) => {
-  const order = 2;
+  const [isOrder] = useContext(CreateContext);
+
   return (
     <div className="">
       <div className="drawer ">
@@ -82,11 +84,11 @@ const Header = ({ children }) => {
                     </button>
                   </li>
                   <li className="bg-blue-600 rounded-md text-white font-bold mr-2">
-                    <div class="indicator">
-                      <span class="indicator-item badge badge-secondary">
-                        {order}
+                    <div className="indicator">
+                      <span className="indicator-item badge badge-secondary">
+                        {isOrder}
                       </span>
-                      <div class="grid place-items-center">
+                      <div className="grid place-items-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-5 w-5"
@@ -152,9 +154,9 @@ const Header = ({ children }) => {
               </button>
             </li>
             <li className="bg-blue-600 rounded-md text-white font-bold my-2">
-              <div class="indicator">
-                <span class="indicator-item badge badge-secondary">1</span>
-                <div class="grid place-items-center">
+              <div className="indicator">
+                <span className="indicator-item badge badge-secondary">{isOrder}</span>
+                <div className="grid place-items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5"
