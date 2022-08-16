@@ -1,16 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
-import img from "../../imge/img.png";
 import { CreateContext } from "../../pages/Home";
 import "../../styel/header.css";
+import Adds from "./Adds";
 
 const Products = () => {
-
   const [isOrder, setIsOrder] = useContext(CreateContext);
-
 
   const [product, setProduct] = useState([]);
   const [isMore, setIsMore] = useState(true);
-
 
   useEffect(() => {
     fetch("product.json")
@@ -18,33 +15,20 @@ const Products = () => {
       .then((data) => setProduct(data));
   }, []);
 
-
   const incriceOne = () => {
-
     setIsOrder(isOrder + 1);
-  }
+  };
 
   return (
     <div>
-      <div className="products_title pt-10 borderd">
-        <div className="md:px-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-            <div>
-              <img className="h-80" src={img} alt="cover photos" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold text-purple-500 mb-4">
-                Get 35% exclusive discount
-              </h1>
-              <button className="btn ">Get start</button>
-            </div>
-          </div>
-        </div>
+      <div>
+        <Adds />
       </div>
       <div className="container mx-auto mt-20">
         <div className="mb-20">
           <h1 className="mb-5 text-6xl font-bold ">
-            <span className="text-yellow-400">Your best choice</span> <span className="text-green-600">t-shirt is here</span>
+            <span className="text-yellow-400">Your best choice</span>{" "}
+            <span className="text-green-600">t-shirt is here</span>
           </h1>
           <hr />
         </div>
@@ -64,8 +48,15 @@ const Products = () => {
                     </div>
                     <div className="intro text-center w-full">
                       <div className="pt-24">
-                        <p className="mb-3 text-2xl font-bold text-yellow-400">{p.name}</p>
-                        <button onClick={incriceOne} className="mr-3 btn btn-sm">Add to card</button>
+                        <p className="mb-3 text-2xl font-bold text-yellow-400">
+                          {p.name}
+                        </p>
+                        <button
+                          onClick={incriceOne}
+                          className="mr-3 btn btn-sm"
+                        >
+                          Add to card
+                        </button>
                         <button className="mr-3 btn btn-sm bg-slate-700">
                           Details more
                         </button>
@@ -88,7 +79,9 @@ const Products = () => {
                     </div>
                     <div className="intro text-center w-full">
                       <div className="pt-24">
-                        <p className="mb-3 text-2xl font-bold text-yellow-400">{p.name}</p>
+                        <p className="mb-3 text-2xl font-bold text-yellow-400">
+                          {p.name}
+                        </p>
                         <button className="mr-3 btn btn-sm">Add to card</button>
                         <button className="mr-3 btn btn-sm bg-slate-700">
                           Details more
