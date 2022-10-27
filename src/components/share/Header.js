@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import CourseLink from "../../hooks/CourseLink";
 import { CreateContext } from "../../pages/Home";
 import "../../styel/header.css";
 
@@ -43,22 +43,19 @@ const Header = ({ children }) => {
               <div>
                 <ul className="menu menu-horizontal text-yellow-500 font-bold">
                   <li>
-                    <Link to="/home">Home</Link>
+                    <CourseLink to="/home">Home</CourseLink>
                   </li>
                   <li>
-                    <Link to="/home">Products</Link>
+                    <CourseLink to="/products">Products</CourseLink>
                   </li>
                   <li>
-                    <Link to="/home">Shope</Link>
+                    <CourseLink to="/shope">Shope</CourseLink>
                   </li>
                   <li>
-                    <Link to="/home">Blogs</Link>
+                    <CourseLink to="/blogs">Blogs</CourseLink>
                   </li>
                   <li>
-                    <Link to="/home">Review</Link>
-                  </li>
-                  <li>
-                    <Link to="/home">Abut us</Link>
+                    <CourseLink to="/about">Abut us</CourseLink>
                   </li>
                   <li className="form-control ml-10 mr-4 relative">
                     <input
@@ -101,7 +98,7 @@ const Header = ({ children }) => {
                     </div>
                   </li>
                   <li className="bg-blue-600 rounded-md text-white font-bold mr-2">
-                    <Link to="/home">Login</Link>
+                    <CourseLink to="/login">Login</CourseLink>
                   </li>
                 </ul>
               </div>
@@ -113,22 +110,19 @@ const Header = ({ children }) => {
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-80 box-size text-white font-bold">
             <li>
-              <Link to="/home">Home</Link>
+              <CourseLink to="/home">Home</CourseLink>
             </li>
             <li>
-              <Link to="/home">Products</Link>
+              <CourseLink to="/products">Products</CourseLink>
             </li>
             <li>
-              <Link to="/home">Shope</Link>
+              <CourseLink to="/shope">Shope</CourseLink>
             </li>
             <li>
-              <Link to="/home">Blogs</Link>
+              <CourseLink to="/blogs">Blogs</CourseLink>
             </li>
             <li>
-              <Link to="/home">Review</Link>
-            </li>
-            <li>
-              <Link to="/home">Abut us</Link>
+              <CourseLink to="/home">about</CourseLink>
             </li>
             <li className="form-control relative">
               <input
@@ -155,7 +149,9 @@ const Header = ({ children }) => {
             </li>
             <li className="bg-blue-600 rounded-md text-white font-bold my-2">
               <div className="indicator">
-                <span className="indicator-item badge badge-secondary">{isOrder}</span>
+                <span className="indicator-item badge badge-secondary">
+                  {isOrder}
+                </span>
                 <div className="grid place-items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +165,7 @@ const Header = ({ children }) => {
               </div>
             </li>
             <li className="bg-blue-600 rounded-md text-white font-bold mt-2">
-              <Link to="/home">Login</Link>
+              <CourseLink to="/login">Login</CourseLink>
             </li>
           </ul>
         </div>

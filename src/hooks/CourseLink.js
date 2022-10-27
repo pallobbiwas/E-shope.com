@@ -8,8 +8,8 @@ function CourseLink({ children, to, ...props }) {
     <div>
       <Link
         style={{
-          borderBottom: match ? "2px solid black" : "none",
-          color: match ? "black" : "gray",
+          borderBottom: match ? "2px solid white" : "none",
+          color: match ? "yellow" : "white",
         }}
         to={to}
         {...props}
